@@ -5,7 +5,7 @@ import * as teams from './default_teams.js';
 function set_inventory() {
     const context = room.Inventory.GetContext();
     context.Main.Value = false;
-    context.Secondary.Value = true;
+    context.Secondary.Value = false;
     context.Melee.Value = false;
     context.Explosive.Value = true;
     context.Build.Value = false;
