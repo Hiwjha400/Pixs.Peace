@@ -6,7 +6,7 @@ export const BLUE_TEAM_NAME = "Green";
 export const RED_TEAM_DISPLAY_NAME = "Purple";
 export const BLUE_TEAM_DISPLAY_NAME = "green";
 export const BLUE_TEAM_SPAWN_POINTS_GROUP = 1;
-export const RED_TEAM_SPAWN_POINTS_GROUP = 1;
+export const RED_TEAM_SPAWN_POINTS_GROUP = 2;
 
 export function create_team_red() {
     Teams.Add(RED_TEAM_NAME, RED_TEAM_DISPLAY_NAME, new Color(1, 0, 1, 0));
