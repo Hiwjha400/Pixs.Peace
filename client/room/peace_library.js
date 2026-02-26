@@ -80,7 +80,7 @@ export function create_teams() {
             team.Inventory.BuildInfinity.Value = !blueHasNothing;
         }
         else{
-            team.Inventory.Melee.Value = true;
+            team.Inventory.Melee.Value = false;
             team.Inventory.Build.Value = true;
             team.Inventory.BuildInfinity.Value = true;
         }
