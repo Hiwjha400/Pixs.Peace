@@ -8,7 +8,7 @@ function set_inventory() {
     context.Secondary.Value = false;
     context.Melee.Value = true;
     context.Explosive.Value = true;
-    context.Build.Value = false;
+    context.Build.Value = true;
 }
  
 function set_build_settings() {
