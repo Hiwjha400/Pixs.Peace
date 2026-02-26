@@ -4,24 +4,24 @@ import * as teams from './default_teams.js';
 // разрешает все что можно для строительства
 function set_inventory() {
     const context = room.Inventory.GetContext();
-    context.Main.Value = true;
-    context.Secondary.Value = true;
-    context.Melee.Value = true;
-    context.Explosive.Value = true;
-    context.Build.Value = true;
+    context.Main.Value = false;
+    context.Secondary.Value = false;
+    context.Melee.Value = false;
+    context.Explosive.Value = false;
+    context.Build.Value = false;
 }
- 
+
 function set_build_settings() {
     const context = room.Build.GetContext();
     // прочие опции
     context.Pipette.Value = true;
-    context.BalkLenChange.Value = false;
-    context.SetSkyEnable.Value = false;
+    context.BalkLenChange.Value = true;
+    context.SetSkyEnable.Value = true;
     context.GenMapEnable.Value = true;
     context.ChangeCameraPointsEnable.Value = true;
     context.QuadChangeEnable.Value = true;
     context.BuildModeEnable.Value = false;
-    context.CollapseChangeEnable.Value = false;
+    context.CollapseChangeEnable.Value = true;
     context.RenameMapEnable.Value = true;
     context.ChangeMapAuthorsEnable.Value = true;
     context.LoadMapEnable.Value = true;
@@ -49,10 +49,10 @@ export function apply_room_options() {
 // задает настройки режима мир
 export function configure() {
     room.Properties.GetContext().GameModeName.Value = "GameModes/Peace";// задаем название режима
-    room.Ui.GetContext().Hint.Value = "ЗДАРОВА ИГРОК";// выводим хуи на весь экран
+    room.Ui.GetContext().Hint.Value = "Hint/BuildBase";// выводим подсказку
     room.Ui.GetContext().QuadsCount.Value = true;// выводим количество квадов на карте
     room.BreackGraph.BreackAll = true; // делаем так, чтобы можно было сломать любой блок
-    room.Spawns.GetContext().RespawnTime.Value = 3; // убираем таймер респавна
+    room.Spawns.GetContext().RespawnTime.Value = 1; // убираем таймер респавна
     set_build_settings();
     set_inventory();
     apply_room_options();
@@ -72,22 +72,3 @@ export function create_teams() {
         teams.create_team_blue();
     }
 
-    // настройка инвентаря команд при их добавлении
-    room.Teams.OnAddTeam.Add(function (team) {
-        if (team.id === teams.BLUE_TEAM_NAME) {
-            team.Inventory.Melee.Value = !blueHasNothing;
-            team.Inventory.Build.Value = !blueHasNothing;
-            team.Inventory.BuildInfinity.Value = !blueHasNothing;
-        }
-        else{
-            team.Inventory.Melee.Value = false;
-            team.Inventory.Build.Value = true;
-            team.Inventory.BuildInfinity.Value = true;
-        }
-    });
-
-    // по запросу на вход в команду - кидаем игрока в команду
-    room.Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
-    // если игрок сменил команду или выбрал ее, то происходит спавн игрока
-    room.Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn(); });
-}
