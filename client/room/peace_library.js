@@ -52,7 +52,7 @@ export function configure() {
     room.Ui.GetContext().Hint.Value = "ЗДАРОВА ИГРОК";// выводим хуи на весь экран
     room.Ui.GetContext().QuadsCount.Value = true;// выводим количество квадов на карте
     room.BreackGraph.BreackAll = true; // делаем так, чтобы можно было сломать любой блок
-    room.Spawns.GetContext().RespawnTime.Value = 1; // убираем таймер респавна
+    room.Spawns.GetContext().RespawnTime.Value = 3; // убираем таймер респавна
     set_build_settings();
     set_inventory();
     apply_room_options();
