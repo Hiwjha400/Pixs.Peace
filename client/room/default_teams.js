@@ -4,7 +4,7 @@ import { Teams } from 'pixel_combats/room';
 export const RED_TEAM_NAME = "Purple";
 export const BLUE_TEAM_NAME = "Green";
 export const RED_TEAM_DISPLAY_NAME = "Purple";
-export const BLUE_TEAM_DISPLAY_NAME = "blue";
+export const BLUE_TEAM_DISPLAY_NAME = "green";
 export const BLUE_TEAM_SPAWN_POINTS_GROUP = 1;
 export const RED_TEAM_SPAWN_POINTS_GROUP = 1;
 
