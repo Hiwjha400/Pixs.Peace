@@ -20,7 +20,7 @@ function set_build_settings() {
     context.GenMapEnable.Value = true;
     context.ChangeCameraPointsEnable.Value = true;
     context.QuadChangeEnable.Value = true;
-    context.BuildModeEnable.Value = true;
+    context.BuildModeEnable.Value = false;
     context.CollapseChangeEnable.Value = true;
     context.RenameMapEnable.Value = true;
     context.ChangeMapAuthorsEnable.Value = true;
@@ -52,7 +52,7 @@ export function configure() {
     room.Ui.GetContext().Hint.Value = "Hint/BuildBase";// выводим подсказку
     room.Ui.GetContext().QuadsCount.Value = true;// выводим количество квадов на карте
     room.BreackGraph.BreackAll = true; // делаем так, чтобы можно было сломать любой блок
-    room.Spawns.GetContext().RespawnTime.Value = 0; // убираем таймер респавна
+    room.Spawns.GetContext().RespawnTime.Value = 1; // убираем таймер респавна
     set_build_settings();
     set_inventory();
     apply_room_options();
