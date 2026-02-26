@@ -6,7 +6,7 @@ function set_inventory() {
     const context = room.Inventory.GetContext();
     context.Main.Value = false;
     context.Secondary.Value = true;
-    context.Melee.Value = false;
+    context.Melee.Value = true;
     context.Explosive.Value = true;
     context.Build.Value = false;
 }
