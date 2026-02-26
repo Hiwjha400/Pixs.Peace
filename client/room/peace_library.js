@@ -15,13 +15,13 @@ function set_build_settings() {
     const context = room.Build.GetContext();
     // прочие опции
     context.Pipette.Value = true;
-    context.BalkLenChange.Value = true;
+    context.BalkLenChange.Value = false;
     context.SetSkyEnable.Value = false;
     context.GenMapEnable.Value = true;
     context.ChangeCameraPointsEnable.Value = true;
     context.QuadChangeEnable.Value = true;
     context.BuildModeEnable.Value = false;
-    context.CollapseChangeEnable.Value = true;
+    context.CollapseChangeEnable.Value = false;
     context.RenameMapEnable.Value = true;
     context.ChangeMapAuthorsEnable.Value = true;
     context.LoadMapEnable.Value = true;
