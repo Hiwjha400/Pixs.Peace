@@ -49,7 +49,7 @@ export function apply_room_options() {
 // задает настройки режима мир
 export function configure() {
     room.Properties.GetContext().GameModeName.Value = "GameModes/Peace";// задаем название режима
-    room.Ui.GetContext().Hint.Value = "ЗДАРОВА ИГРОК";// выводим подсказку
+    room.Ui.GetContext().Hint.Value = "ЗДАРОВА ИГРОК";// выводим хуи на весь экран
     room.Ui.GetContext().QuadsCount.Value = true;// выводим количество квадов на карте
     room.BreackGraph.BreackAll = true; // делаем так, чтобы можно было сломать любой блок
     room.Spawns.GetContext().RespawnTime.Value = 1; // убираем таймер респавна
