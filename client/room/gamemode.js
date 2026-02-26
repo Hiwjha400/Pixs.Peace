@@ -11,4 +11,3 @@ const ADMINS = [
 
 function isAdmin(player) {
     return ADMINS.includes(player.id);
-}
