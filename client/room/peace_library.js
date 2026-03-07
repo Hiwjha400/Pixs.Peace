@@ -7,6 +7,7 @@ function set_inventory() {
     context.Main.Value = false;
     context.Secondary.Value = false;
     context.Melee.Value = false;
+    context.Xarchok.value = false;
     context.Explosive.Value = true;
     context.Build.Value = false;
 }
